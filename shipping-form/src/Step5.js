@@ -27,10 +27,9 @@ export const Step5 = () => {
       <Typography component="h2" variant="h5">
         Complete Form
       </Typography>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <FileInput name="files" control={control} />
+      
         <PrimaryButton>Next</PrimaryButton>
-      </Form>
+      
     </MainContainer>
   );
 };

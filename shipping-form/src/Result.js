@@ -34,41 +34,13 @@ export const Result = () => {
   const styles = useStyles();
   const { data } = useData();
 
-  const entries = Object.entries(data).filter((entry) => entry[0] !== "files");
-  const { files } = data;
-
-  const onSubmit = async () => {
-    const formData = new FormData();
-    if (data.files) {
-      data.files.forEach((file) => {
-        formData.append("files", file, file.name);
-      });
-    }
-
-    entries.forEach((entry) => {
-      formData.append(entry[0], entry[1]);
-    });
-
-    const res = await fetch("http://localhost:4000/", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (res.status === 200) {
-      Swal.fire("Great job!", "You made a label!", "success");
-      setSuccess(true);
-    }
-  };
-
-  if (success) {
-    return <Confetti />;
-  }
+  
 
   return (
     <>
       <MainContainer>
         <Typography component="h2" variant="h5">
-          📋 Form Values
+          📋 Review and Confirm
         </Typography>
         <TableContainer className={styles.root} component={Paper}>
           <Table className={styles.table} aria-label="simple table">

@@ -12,13 +12,13 @@
     "libphonenumber-js": "^1.7.56",
     "material-ui": "^0.20.2",
     "react": "^16.13.1",
-    "react-confetti": "^6.0.0",
+    "react-confetti": "^6.0.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.0.3",
     "react-hook-form": "^6.15.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "sweetalert2": "^9.17.1",
+    "sweetalert2": "^9.17.2",
     "yup": "^0.29.3"
   },
   "devDependencies": {
