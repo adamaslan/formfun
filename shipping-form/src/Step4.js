@@ -12,29 +12,29 @@ import * as yup from "yup";
 
 
 const schema = yup.object().shape({
-  weight: yup
+  shipping: yup
     .string()
-    //.weight("Weight should have correct format")
-    .required("weight is a required field"),
+    //.shipping("Shipping nust be ground or priority")
+    .required("Shipping is a required field"),
 });
 
 
 
 
-export const Step3 = () => {
+export const Step4 = () => {
   const { setValues, data } = useData();
   const history = useHistory();
   debugger;
   const { register, handleSubmit, errors } = useForm({
     defaultValues: {
-      weight: data.weight
+      shipping: data.shipping
     },
     mode: "onBlur",
     resolver: yupResolver(schema),
   });
  
   const onSubmit = (data) => {
-    history.push("./step4");
+    history.push("./step5");
     setValues(data);
   };
 
@@ -46,12 +46,12 @@ export const Step3 = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           ref={register}
-          id="weight"
-          type="weight"
-          label="weight"
-          name="weight"
-          error={!!errors.weight}
-          helperText={errors?.weight?.message}
+          id="shipping"
+          type="shipping"
+          label="shipping"
+          name="shipping"
+          error={!!errors.shipping}
+          helperText={errors?.shipping?.message}
           required
         />
 
