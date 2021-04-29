@@ -11,27 +11,27 @@ import { Input } from "./components/Input";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-  firstName: yup
-    .string()
-    .matches("First name should not contain numbers")
-    .required("First name is a required field"),
-  streetName: yup
-    .string()
-    .matches(/^([^0-9]*)$/, "Last name should not contain numbers")
-    .required("Last name is a required field"),
-    cityName: yup
-    .string()
-    .matches(/^([^0-9]*)$/, "")
-    .required("Address is a required field"),
-    state: yup
-    .string()
-    .matches(/^([^0-9]*)$/, "")
-    .required("State is a required field"),
-    zipcode: yup
-    .string()
-    .matches(/^([^a-z]*)$/, "Zipcode cannot contain letters")
-    .required("Address is a required field"),
-});
+Name: yup
+.string()
+.matches()
+.required("Enter your full name please"),
+Street: yup
+.string()
+.matches(/\d+\w+\s\w+\s\w+/)
+.required("Street needs a name and address number"),
+City: yup
+.string()
+.matches(/^([^0-9]*)$/, "")
+.required("Address is a required field"),
+State: yup
+.string()
+.matches(/^([^0-9]*)$/, /^ ([A-Z]{2})$/)
+.required("Enter Correct State Abbreviation"),
+ZipCode: yup
+.string()
+.matches(/^([^a-z]*)$/)
+.required("Zip Code cannot contain letters"),
+}); 
 
 export const Step1 = () => {
   const { setValues, data } = useData();
@@ -55,49 +55,49 @@ export const Step1 = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
       <Input
           ref={register}
-          id="firstName"
+          id="Name"
           type="text"
           label="Name"
-          name="firstName"
-          error={!!errors.firstName}
-          helperText={errors?.firstName?.message}
+          name="Name"
+          error={!!errors.Name}
+          helperText={errors?.Name?.message}
         />
         <Input
           ref={register}
-          id="streetName"
+          id="Street"
           type="text"
           label="Street"
-          name="streetName"
-          error={!!errors.streetName}
-          helperText={errors?.streetName?.message}
+          name="Street"
+          error={!!errors.Street}
+          helperText={errors?.Street?.message}
         />
          <Input
           ref={register}
-          id="cityName"
+          id="City"
           type="text"
           label="City"
-          name="cityName"
-          error={!!errors.cityName}
-          helperText={errors?.cityName?.message}
+          name="City"
+          error={!!errors.City}
+          helperText={errors?.City?.message}
         />
          <Input
           ref={register}
-          id="state"
+          id="State"
           type="text"
           label="State"
-          name="state"
-          error={!!errors.state}
-          helperText={errors?.state?.message}
+          name="State"
+          error={!!errors.State}
+          helperText={errors?.State?.message}
         />
           <Input
           ref={register}
-          id="zipcode"
+          id="ZipCode"
           type="number"
-          label="Zipcode"
-          name="zipcode"
-          error={!!errors.zipcode}
-          helperText={errors?.zipcode?.message}
-        />n
+          label="Zip Code"
+          name="ZipCode"
+          error={!!errors.ZipCode}
+          helperText={errors?.ZipCode?.message}
+        />
         <PrimaryButton>Next</PrimaryButton>
       </Form>
     </MainContainer>
