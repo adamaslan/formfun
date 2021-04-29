@@ -68,7 +68,7 @@ export const Result = () => {
     <>
       <MainContainer>
         <Typography component="h2" variant="h5">
-          📋 Form Values
+          📋 Review and Confirm
         </Typography>
         <TableContainer className={styles.root} component={Paper}>
           <Table className={styles.table} aria-label="simple table">
