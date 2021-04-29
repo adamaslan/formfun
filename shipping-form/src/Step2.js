@@ -14,7 +14,7 @@ import * as yup from "yup";
 const schema = yup.object().shape({
   firstName: yup
     .string()
-    .matches(/^([^0-9]*)$/, "First name should not contain numbers")
+    .matches("First name should not contain numbers")
     .required("First name is a required field"),
   streetName: yup
     .string()
@@ -24,13 +24,21 @@ const schema = yup.object().shape({
     .string()
     .matches(/^([^0-9]*)$/, "")
     .required("Address is a required field"),
+    state: yup
+    .string()
+    .matches(/^([^0-9]*)$/, "")
+    .required("State is a required field"),
+    zipcode: yup
+    .string()
+    .matches(/^([^a-z]*)$/, "Zipcode cannot contain letters")
+    .required("Address is a required field"),
 });
 
 export const Step2 = () => {
   const { setValues, data } = useData();
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm({
-    defaultValues: { firstName: data.firstName, streetName: data.streetName, cityName: data.cityName },
+    defaultValues: { firstName: data.firstName, streetName: data.streetName, cityName: data.cityName, state: data.state, zipcode: data.zipcode },
     mode: "onBlur",
     resolver: yupResolver(schema),
   });
@@ -43,7 +51,7 @@ export const Step2 = () => {
   return (
     <MainContainer>
       <Typography component="h2" variant="h5">
-        Home Address
+        Receiver's Address
       </Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
@@ -59,7 +67,7 @@ export const Step2 = () => {
           ref={register}
           id="streetName"
           type="text"
-          label="Last Name"
+          label="Street"
           name="streetName"
           error={!!errors.streetName}
           helperText={errors?.streetName?.message}
@@ -72,6 +80,24 @@ export const Step2 = () => {
           name="cityName"
           error={!!errors.cityName}
           helperText={errors?.cityName?.message}
+        />
+         <Input
+          ref={register}
+          id="state"
+          type="text"
+          label="State"
+          name="state"
+          error={!!errors.state}
+          helperText={errors?.state?.message}
+        />
+          <Input
+          ref={register}
+          id="zipcode"
+          type="number"
+          label="Zipcode"
+          name="zipcode"
+          error={!!errors.zipcode}
+          helperText={errors?.zipcode?.message}
         />
         <PrimaryButton>Next</PrimaryButton>
       </Form>
