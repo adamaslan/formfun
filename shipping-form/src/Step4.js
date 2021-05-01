@@ -14,7 +14,7 @@ import * as yup from "yup";
 const schema = yup.object().shape({
   shipping: yup
     .string()
-    //.shipping("Shipping nust be ground or priority")
+    //.shipping("Shipping must be ground or priority")
     .required("Shipping is a required field"),
 });
 

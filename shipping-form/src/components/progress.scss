@@ -1,0 +1,17 @@
+@import "../../styles/mixins.scss";
+
+.progress_container {
+  background: rgb(208, 243, 208);
+  height: 5px;
+  position: relative;
+  width: 100%;
+  @include five-hundred {
+    width: 250px;
+  }
+}
+
+.progress_child {
+  background: rgba(72, 199, 72, 0.719);
+  height: 100%;
+  transition: width .5s ease-in-out;
+}

@@ -74,7 +74,7 @@ export const Result = () => {
           <Table className={styles.table} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Field</TableCell>
+                <TableCell>Category</TableCell>
                 <TableCell align="right">Value</TableCell>
               </TableRow>
             </TableHead>

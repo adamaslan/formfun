@@ -24,7 +24,7 @@ export const Step5 = () => {
   return (
     <MainContainer>
       <Typography component="h2" variant="h5">
-        Complete Form
+        Form Completed
       </Typography>
       
         <PrimaryButton>Next</PrimaryButton>

@@ -9,6 +9,7 @@ import { MainContainer } from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { Input } from "./components/Input";
 import * as yup from "yup";
+import ProgressBar from "./components/progress";
 
 const schema = yup.object().shape({
 Name: yup
@@ -49,6 +50,7 @@ export const Step1 = () => {
 
   return (
     <MainContainer>
+      <ProgressBar />
       <Typography component="h2" variant="h5">
         Sender's Address 
       </Typography>
