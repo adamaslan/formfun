@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Header />
-      <Router>
+      <Router> 
         <Switch>
           <Route exact path="/" component={Step1} />
           <Route path="/step2" component={Step2} />
