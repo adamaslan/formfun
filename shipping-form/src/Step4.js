@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers";
 import { useData } from "./DataContext";
 import Typography from "@material-ui/core/Typography";
 import { PrimaryButton } from "./components/PrimaryButton";
-import { MainContainer } from "./components/MainContainer";
+import MainContainer from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { Input } from "./components/Input";
 import * as yup from "yup";
@@ -40,6 +40,8 @@ export const Step4 = () => {
 
   return (
     <MainContainer>
+
+ <progress value= {75} max= {100} />
       <Typography component="h2" variant="h5">
        
       </Typography>

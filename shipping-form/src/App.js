@@ -7,13 +7,13 @@ import { Step3 } from "./Step3";
 import { Step4 } from "./Step4";
 import { Step5 } from "./Step5";
 import { Result } from "./Result";
-import { Header } from "./components/Header";
+import Header from "./Header";
 
 
 function App() {
   return (
     <>
-      <Header />
+      <Header> Shipping Label </Header>
       <Router> 
         <Switch>
           <Route exact path="/" component={Step1} />

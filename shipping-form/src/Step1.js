@@ -5,11 +5,10 @@ import Typography from "@material-ui/core/Typography";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers";
 import { PrimaryButton } from "./components/PrimaryButton";
-import { MainContainer } from "./components/MainContainer";
+import  MainContainer from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { Input } from "./components/Input";
 import * as yup from "yup";
-import ProgressBar from "./components/progress";
 
 const schema = yup.object().shape({
 Name: yup
@@ -50,7 +49,7 @@ export const Step1 = () => {
 
   return (
     <MainContainer>
-      <ProgressBar />
+ <progress value= {0} max= {100} />
       <Typography component="h2" variant="h5">
         Sender's Address 
       </Typography>

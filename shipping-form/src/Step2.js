@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers";
 import { PrimaryButton } from "./components/PrimaryButton";
-import { MainContainer } from "./components/MainContainer";
+import MainContainer from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { Input } from "./components/Input";
 import * as yup from "yup";
@@ -50,6 +50,8 @@ export const Step2 = () => {
 
   return (
     <MainContainer>
+
+ <progress value= {20} max= {100} />
       <Typography component="h2" variant="h5">
         Receiver's Address
       </Typography>

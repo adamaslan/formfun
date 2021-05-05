@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useData } from "./DataContext";
-import { MainContainer } from "./components/MainContainer";
+import MainContainer from "./components/MainContainer";
 import { PrimaryButton } from "./components/PrimaryButton";
 import Typography from "@material-ui/core/Typography";
 
@@ -23,9 +23,12 @@ export const Step5 = () => {
 
   return (
     <MainContainer>
+
+ <progress value= {99} max= {100} />
       <Typography component="h2" variant="h5">
         Form Completed
       </Typography>
+
       
         <PrimaryButton>Next</PrimaryButton>
       

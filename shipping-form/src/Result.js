@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { useData } from "./DataContext";
-import { MainContainer } from "./components/MainContainer";
+import MainContainer from "./components/MainContainer";
 import { PrimaryButton } from "./components/PrimaryButton";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
