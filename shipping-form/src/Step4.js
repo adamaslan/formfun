@@ -5,26 +5,42 @@ import { yupResolver } from "@hookform/resolvers";
 import { useData } from "./DataContext";
 import Typography from "@material-ui/core/Typography";
 import { PrimaryButton } from "./components/PrimaryButton";
-import { MainContainer } from "./components/MainContainer";
+import {MainContainer} from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { Input } from "./components/Input";
 import * as yup from "yup";
+import { makeStyles } from "@material-ui/core/styles";
+
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: theme.spacing(3, 0, 2),
+    fontFamily: "Permanent Marker",
+    textAlign: "center",
+    fontSize: "32 px",
+    color: "deeppink",
+    textShadow: "1px 1px darkmagenta",
+  },
+}));
+
+
 
 
 const schema = yup.object().shape({
   shipping: yup
     .string()
-    //.shipping("Shipping nust be ground or priority")
+    //.shipping("Shipping must be ground or priority")
     .required("Shipping is a required field"),
 });
 
 
-
-
 export const Step4 = () => {
+  
+const styles = useStyles();
   const { setValues, data } = useData();
   const history = useHistory();
-  debugger;
+  
   const { register, handleSubmit, errors } = useForm({
     defaultValues: {
       shipping: data.shipping
@@ -40,8 +56,10 @@ export const Step4 = () => {
 
   return (
     <MainContainer>
-      <Typography component="h2" variant="h5">
-       
+
+ <progress value= {75} max= {100} />
+      <Typography className={styles.root} component="h2" variant="h5">
+       Ground or Priority
       </Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input

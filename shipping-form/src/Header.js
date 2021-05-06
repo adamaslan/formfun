@@ -5,11 +5,11 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(3, 0, 2),
-    fontFamily: "Lato Thin",
+    fontFamily: "Permanent Marker",
     textAlign: "center",
     fontSize: "40px",
-    color: "grey",
-    textShadow: "1px 1px aqua",
+    color: "pink",
+    textShadow: "1px 1px darkmagenta",
   },
 }));
 
@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <Typography className={styles.root} component="h1" variant="h5">
-      Shipping label
+     Shipping Label
     </Typography>
   );
 };
