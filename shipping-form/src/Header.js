@@ -1,13 +1,24 @@
-import styled from "styled-components";
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
 
-export default styled.h1`
-  display: flex;
-  background-color: powderblue;
-  border: 10px solid palevioletred;
-  border-radius: 5px;
-  padding: 5px;
-  align-self: center;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-`;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: theme.spacing(3, 0, 2),
+    fontFamily: "Permanent Marker",
+    textAlign: "center",
+    fontSize: "40px",
+    color: "pink",
+    textShadow: "1px 1px darkmagenta",
+  },
+}));
+
+export const Header = () => {
+  const styles = useStyles();
+
+  return (
+    <Typography className={styles.root} component="h1" variant="h5">
+     Shipping Label
+    </Typography>
+  );
+};

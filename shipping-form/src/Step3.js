@@ -5,10 +5,24 @@ import { yupResolver } from "@hookform/resolvers";
 import { useData } from "./DataContext";
 import Typography from "@material-ui/core/Typography";
 import { PrimaryButton } from "./components/PrimaryButton";
-import MainContainer from "./components/MainContainer";
+import {MainContainer} from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { Input } from "./components/Input";
 import * as yup from "yup";
+import { makeStyles } from "@material-ui/core/styles";
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: theme.spacing(3, 0, 2),
+    fontFamily: "Permanent Marker",
+    textAlign: "center",
+    fontSize: "32 px",
+    color: "deeppink",
+    textShadow: "1px 1px darkmagenta",
+  },
+}));
+
 
 
 const schema = yup.object().shape({
@@ -19,12 +33,12 @@ const schema = yup.object().shape({
 });
 
 
-
-
 export const Step3 = () => {
+
+const styles = useStyles();
   const { setValues, data } = useData();
   const history = useHistory();
-  debugger;
+
   const { register, handleSubmit, errors } = useForm({
     defaultValues: {
       weight: data.weight
@@ -42,8 +56,8 @@ export const Step3 = () => {
     <MainContainer>
       
  <progress value= {50} max= {100} />
-      <Typography component="h2" variant="h5">
-       
+      <Typography className={styles.root} component="h2" variant="h5">
+       Package Weight
       </Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
