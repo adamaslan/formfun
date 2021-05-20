@@ -17,7 +17,7 @@ export const Header = () => {
   const styles = useStyles();
 
   return (
-    <Typography className={styles.root} component="h1" variant="h5">
+    <Typography data-testid ='Header' className={styles.root} component="h1" variant="h5">
      Shipping Label
     </Typography>
   );

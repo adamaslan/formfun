@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const schema = yup.object().shape({
 Name: yup
 .string()
@@ -60,6 +61,8 @@ export const Step1 = () => {
     setValues(data);
   };
   const styles = useStyles();
+
+
   return (
     <MainContainer>
       
